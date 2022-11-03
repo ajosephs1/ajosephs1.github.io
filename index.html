@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+    <title>Personal Portfolio Page</title>
+  </head>
+  <body>
+    <nav id="navbar">
+      <img src="/favicon.ico" alt="favicon-32x32" id="favicon">
+      <ul>
+        <li><a href="#welcome-section">About</a></li>
+        <li><a href="#projects">Work</a></li>
+        <li><a href="#contact-info">Contact</a></li>
+      </ul>
+    </nav>
+    <section id="welcome-section">
+      <h1>Wagwaan, I am Andrew</h1>
+      <p>a web developer from Kingston, Jamaica </p>
+    </section>
+    <section id="projects">
+      <h2>The Collection</h2>
+      <!-- 4 projects in a grid that are centered vertically and horizontally-->
+      <!-- text appears when hovered over background image overlay changes opacity -->
+      <!-- image is screenshot of project home page-->
+      <!-- mediaquery makes grid into one column, links take width of viewport-->
+      <div class="project-title-grid">
+        <a
+          href="https://codepen.io/ajosephs1/full/OJzaRmM"
+          class="project-tile"
+        >
+          <img
+            src="images/survey_form_screenshot.jpg"
+            alt="survey_form_screenshot" 
+          />
+          <p>Oxween School of Magic Application</p>
+        </a>
+        <a
+          href="https://codepen.io/ajosephs1/full/BaJqJGZ"
+          class="project-tile"
+        >
+          <img
+            src="images/tribute_page_screenshot.jpg"
+            alt="tribute_page_screenshot" 
+          />
+          <p>Dapper Dan Tribute Page</p>
+        </a>
+        <a
+          href="https://codepen.io/ajosephs1/full/KKoOrow"
+          class="project-tile"
+        >
+          <img
+            src="images/technical_doc_screenshot.jpg"
+            alt="technical_doc_screenshot"
+          />
+          <p>Web Development Technical Document</p>
+        </a>
+        <a
+          href="https://codepen.io/ajosephs1/full/NWXZGLv"
+          class="project-tile"
+        >
+          <img
+            src="images/product_landing_screenshot.jpg"
+            alt="product_landing_screenshot" 
+          />
+          <p>Penguin Page Forum</p>
+        </a>
+      </div>
+    </section>
+    <section id="contact-info">
+      <h1>Work with me</h1>
+      <p>would you like a side of ipsum with that lorem?</p>
+      <div class="social-links">
+        <!-- have a grid with all social media links as well as a phone email symbol to contact -->
+        <a id="profile-link" href="https://github.com/ajosephs1" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        </a>
+        <a id="profile-link" href="https://www.linkedin.com/in/andrewjosephs1/" target="_blank" >
+            <i class="fab fa-linkedin"></i> Connect
+        </a>
+        <a href="mailto:andrew_josephs@hotmail.co.uk" target="_blank" id="profile-link"
+          ><i class="fas fa-mail-bulk"></i> Mail</a
+        >
+      </div>
+    </section>
+    <footer></footer>
+  </body>
+</html>
