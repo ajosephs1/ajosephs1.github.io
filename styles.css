@@ -15,21 +15,27 @@ body {
 /* NAVBAR CSS */
 nav {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   margin-top: 0;
   background-color: var(--persian-orange);
   position: fixed;
   width: 100%;
   top: 0;
+  z-index: 1;
 }
 a{
     text-decoration: none;
     color: inherit;
 }
+#favicon{
+  margin-left: 5rem;
+  height: 80%;
+}
 #navbar ul {
   list-style: none;
   display: flex;
-  justify-content: space-evenly;
+  float: right;
+  justify-content:flex-end space-evenly;
   margin-right: 5rem;
 }
 #navbar li {
