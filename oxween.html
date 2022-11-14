@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oxween Application</title>
+        <link rel="stylesheet" href="/css/oxween.css">
+       </head>
+       <body>
+       <main id="main">
+         <h1 id="title">Oxween Tertiary Witchcraft and Wizardry Application</h1>
+        
+         <p id="description">Quill and ink applications only. Traced incantations will automatically nullify your application. We hope to see you soon.</p>
+        <div>
+           <form id="survey-form"> 
+             <div id="form-group">
+               <label 
+                      for="name" 
+                      id="name-label">
+                 Name
+               </label>
+                 <input 
+                        type="text" 
+                        name="name" 
+                        id="name" 
+                        class="form-control"
+                        placeholder="Enter your name"
+                        required/>
+             </div>
+             <div id="form-group">
+               <label 
+                      for="email" 
+                      id="email-label">
+                 Owlmail</label>
+                 <input 
+                        type="email" 
+                        name="email" 
+                        id="email" 
+                        placeholder="Enter your Owlmail address"
+                        class="form-control"
+                        required/>
+             </div>
+             <div id="form-group">
+               <label 
+                      for="age" 
+                      id="number-label">
+                 Age</label>
+                 <input 
+                        type="number" 
+                        name="age" 
+                        id="number" 
+                        min="10"
+                        max="200"
+                        class="form-control"
+                        placeholder="Age"
+                        required/>
+             </div>
+             <div id="form-group">
+               <p>
+                 Secondary school of Magic attended 
+               </p>
+                 <select 
+                        type="dropdown" 
+                        name="wizarding-highschool" 
+                        id="dropdown"
+                        class="form-control"
+                        placeholder="Enter your name">
+                   <option disabled selected>Select school</option>
+                   <option value="hogwarts">Hogwarts School of     Witchcraft and Wizardry (Scotland)
+               </option>
+                   <option value="beauxbatons">Beauxbatons Academy of Magic (France)</option>
+                   <option value="castelobruxo">Castelobruxo (Central Brazil)</option>
+                   <option value="durmstrang">Durmstrang Institute (Northern Europe)</option>
+                   <option value="ilvermorny">Ilvermorny (Eastern North America)</option>
+                   <option value="mahoutokoro">Mahoutokoro School of Magic (Japan)</option>
+                   <option value="uagadou">Uagadou School of Magic (Uganda)</option>
+                   <option value="koldovstoretz">Koldovstoretz (Russia)</option>
+                         </select>
+             </div>
+           <div id="form-group">
+                 <p>What wizarding classification do you identify with</p>
+               
+               <label>
+                 <input
+                   name="identification"
+                   value="pureblood"
+                   type="radio"
+                 />Pure-blood</label
+               >
+               <label>
+                 <input
+                   name="identification"
+                   value="halfblood"
+                   type="radio"
+                 />Half-blood</label
+                 >
+               <label>
+                 <input
+                   name="identification"
+                   value="muggleborn"
+                   type="radio"
+                 />Muggle-born</label
+                 >
+               <label>
+                 <input
+                   name="identification"
+                   value="preferno"
+                   type="radio"
+                 />Prefer not to answer</label
+                 >
+             </div>
+             <div id="form-group">
+               <p>Future employment interests (select all that apply)</p>
+                <label>
+                 <input
+                   name="study"
+                   value="arithmancer"
+                   type="checkbox"
+                 />Arithmancer</label
+                 >
+               <label>
+                 <input
+                   name="study"
+                   value="auror"
+                   type="checkbox"
+                 />Auror</label
+                 >
+               <label>
+                 <input
+                   name="study"
+                   value="dragonkeeper"
+                   type="checkbox"
+                 />Dragon Keeper</label
+                 >
+               <label>
+                 <input
+                   name="study"
+                   value="healer"
+                   type="checkbox"
+                 />Healer</label
+                 >
+               <label>
+                 <input
+                   name="study"
+                   value="herbologist"
+                   type="checkbox"
+                 />Herbologist</label
+                 >
+               <label>
+                 <input
+                   name="study"
+                   value="legislator"
+                   type="checkbox"
+                 />Wizengamot Legislator</label
+                 >
+               <label>
+                 <input
+                   name="study"
+                   value="muggleexpert"
+                   type="checkbox"
+                 />Muggle Expert</label
+                 >
+               <label>
+                 <input
+                   name="study"
+                   value="potioneer"
+                   type="checkbox"
+                 />Potioneer</label
+                 >
+               <label>
+                 <input
+                   name="study"
+                   value="wandmaker"
+                   type="checkbox"
+                 />Wandmaker</label
+                 >
+             </div>
+             <div id="form-group">
+               <p>500 word short-essay</p>
+               <textarea placeholder="self-writing-quills are permitted"></textarea>
+             </div>
+             <button type="submit" id="submit">Submit</button>
+           </form>
+         </div>
+         </main>
+       </body>
+       
+</html>

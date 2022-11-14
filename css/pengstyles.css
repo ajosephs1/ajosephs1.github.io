@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=Hanalei&family=Josefin+Sans&family=Rock+3D&display=swap");
+
+* {
+  padding: 0%;
+  box-sizing: border-box;
+  margin: 0%;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+body {
+  background-color: #91989f;
+  position: relative;
+  font-family: "Josefin Sans", sans-serif;
+}
+/* global styles ^ */
+
+#nav-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 6.5vh;
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  top: 0
+}
+#list {
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+  margin: 0;
+  padding: 0%;
+}
+#list a {
+  text-decoration: none;
+  color: #91989f;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: 0.5s;
+  margin-right: 150px;
+}
+#list a:hover {
+  color: black;
+}
+#pengfacts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10vh 40px auto 40px;
+}
+#pengfacts img {
+  border: solid 10px rgb(157, 179, 191);
+  border-radius: 20%;
+}
+#evolution {
+  display: flex;
+  margin: 40px 200px auto 200px;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 4vw;
+  color: aliceblue;
+}
+#evolution p {
+  max-width: 600px;
+  margin-right: 20px;
+
+}
+#evolution iframe {
+  border: solid 5px white;
+  border-radius: 0.5em;
+}
+#mailinglist {
+  display: flex;
+  margin: 40px 200px 50px 200px;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 4.5vw;
+  color: aliceblue;
+}
+#mailinglist p {
+  max-width: 600px;
+  margin-right: 20px;
+}
+#mailinglist button {
+  width: 150px;
+  height: 50px;
+  background-color: azure;
+  border: solid black 2px;
+  border-radius: 2em;
+  text-align: center;
+  transition: all 0.3 s;
+}
+#mailinglist button:hover {background-color: yellow;}
+
+#mailinglist input {
+  width: 300px;
+  height: 50px;
+  border: solid black 2px;
+  text-align: center;
+  border-radius: 2em;
+}
+
+@media only screen and (max-width:750px){
+  #list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  #pengfacts{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, min-content);
+    place-items: center;
+  }
+  #pengfacts img {
+    height:auto;
+    width: 60vw;
+  }
+  #evolution {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, min-content);
+    place-items: center;
+    margin:7vh auto 2vh auto;
+    font-size: 4vw;
+    row-gap: 1.5rem;
+  }
+  #mailinglist{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, min-content);
+    place-items: center;
+    margin:7vh auto 2vh auto;
+    font-size: 4vw;
+    row-gap: 1.5rem;
+    margin-bottom: 8vh;
+  }
+}

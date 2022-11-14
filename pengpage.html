@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)http://127.0.0.1:5500/product_landing_page.html#mailinglist -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PengPage</title>
+    
+  <link rel="stylesheet" href="./PengPage_files/styles.css"></head>
+  <body>
+    <div id="page">
+      <header id="header">
+        <nav id="nav-bar">
+          <img src="./PengPage_files/cute-angry-head-face-of-penguin-logo-icon-illustration-vector.jpg" alt="penguin icon" width="75px" id="header-img">
+          <ul id="list">
+            <a href="http://127.0.0.1:5500/product_landing_page.html#pengfacts" class="nav-link">
+              <li>PengFacts</li>
+            </a>
+            <a href="http://127.0.0.1:5500/product_landing_page.html#evolution" class="nav-link">
+              <li>Evolution</li>
+            </a>
+            <a href="http://127.0.0.1:5500/product_landing_page.html#mailinglist" class="nav-link">
+              <li>Rookery</li>
+            </a>
+          </ul>
+        </nav>
+      </header>
+
+      <section id="pengfacts">
+        <div id="rockhopper">
+          <img src="./PengPage_files/penguin-2555024_1280.jpg" alt="rockhopper penguin" width="400px" class="pengimg">
+          <ul></ul>
+        </div>
+        <div id="emperor">
+          <img src="./PengPage_files/18968915524_513a9a6bf5_b.jpg" alt="emperor penguin" width="450px" class="pengimg">
+        </div>
+        <div id="adelie">
+          <img src="./PengPage_files/Adélie_Penguin_(2).jpg" alt="adelie penguin" width="400px" class="pengimg">
+        </div>
+      </section>
+
+      <section id="evolution">
+        <p>
+          Find out how these magnificent animals went from aerieal to aquatic
+          birds over millenia
+        </p>
+        <iframe width="560" height="315" src="./PengPage_files/HMArjGQwLvY.html" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" id="video"></iframe>
+      </section>
+
+      <section id="mailinglist">
+        <p>
+          Join the rookery for our weekly discussion panel of all things
+          penguin!
+        </p>
+        <form action="https://www.freecodecamp.com/email-submit" method="get" id="form">
+          <input type="email" name="email" required="" placeholder="enter email" id="email">
+          <input type="submit" id="submit">
+        </form>
+      </section>
+    </div>
+  <!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>

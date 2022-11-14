@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+main{
+  background-color: hsl(12 30% 75%);
+  overflow: hidden;
+}
+h1 {
+  text-align: center;
+  font-family: 'Rubik Mono One', serif;
+  padding: 75px 0px 0px 0px;
+}
+h3 {
+  text-align: center;
+  font-family: monospace;
+  font-size: 20px
+}
+
+#image {
+  display: block;
+  max-width: 70%;
+  width: 100%;
+  height: auto ;
+  margin: auto;
+  border: solid;
+  border-radius: 20%;
+  border-width: 20px;
+  border-color: hsl(12 50% 25%);
+}
+#tribute-info{
+  padding: 25px;
+}
+figcaption{
+  text-align: center;
+  font-family: monospace;
+  font-size: 18px;
+
+}
+ul {
+  max-width: 700px;
+  margin:50px auto 50px auto;
+  line-height: 1.8;
+  text-align: left;
+  font-family: monospace;
+  font-size: 18px
+}
+
+ul > li{
+margin: 15px auto
+}
+
+#tribute-link {
+  display: block;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  
+}
+#tribute-link:hover{
+  color: maroon;
+  transition: ease-in-out 1s;
+}

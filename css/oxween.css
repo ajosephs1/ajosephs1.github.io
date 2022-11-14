@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Hanalei&family=Rock+3D&display=swap');
+body{
+  background-image: url("https://live.staticflickr.com/4864/32206660728_831968167f_b.jpg");
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
+main{
+  font-family: 'acme', sans-serif;
+  width: 100%;
+  margin: 2.7rem auto 0px auto;
+  
+}
+
+@media (min-width: 576px) {
+  main {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  main {
+    max-width: 720px;
+  }
+}
+#title, #description{
+  text-align: center;
+  color: #BDC0BA;
+}
+h1{font-size: 2.3rem;}
+form {
+  background-color: rgb(143 119 181);
+  padding: 2.5rem 0.625rem;
+  border-radius: 0.25rem;
+  font-size: 1.2rem
+}
+
+@media (min-width: 480px) {
+  form {
+    padding: 2.5rem;
+  }
+}
+#form-group {
+  margin: 0 auto 1rem auto;
+  padding: 0.25rem;
+}
+label{
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  height: 2rem;
+  padding: 0.375rem 0.75rem;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.form-control:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+textarea{
+  border-radius: 0.2rem;
+  width: 70%
+}
+button{background-color: green;
+  border-radius: 0.5rem;
+  opacity: 0.4;
+  transition: 0.3s;
+  width: 30%;
+  height: 2rem
+}
+ button:hover {opacity: 1;}
