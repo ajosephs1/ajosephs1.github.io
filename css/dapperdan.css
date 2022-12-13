@@ -2,6 +2,7 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 main{
@@ -65,3 +66,5 @@ margin: 15px auto
   color: maroon;
   transition: ease-in-out 1s;
 }
+#home {margin-top: 25px;
+  margin-left: 49%;}

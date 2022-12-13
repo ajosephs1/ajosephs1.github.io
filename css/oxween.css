@@ -82,3 +82,9 @@ button{background-color: green;
   height: 2rem
 }
  button:hover {opacity: 1;}
+ 
+ footer {
+  position: absolute;
+bottom: 10px;
+left: 50%;
+text-align: center;}

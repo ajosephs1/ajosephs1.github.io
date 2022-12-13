@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Pig Latin Translator</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/piglatin.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+Mono:wght@400;500&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- first set text boxes add images and symbols  -->
+    <div class="heading">
+      <img
+        src="/piglatin_files/piglatin translator image.jpg"
+        alt="image of pig with child"
+        height="150px"
+      />
+      <h1>Pig Latin Translator</h1>
+    </div>
+    <div class="translator">
+      <div class="english-pig">
+        <h2>English</h2>
+        <button type="button" onclick="translatePigLatin()">
+          <img
+            src="/piglatin_files/transparent icon.png"
+            alt="arrow-icon-png-transparent-19"
+            height="40px"
+          />
+        </button>
+        <h2>Pig Latin</h2>
+      </div>
+      <div class="text-boxes">
+        <textarea name="english" id="english" cols="40" rows="6" ></textarea>
+
+        <textarea name="pig" id="pig" cols="40" rows="6"></textarea>
+      </div>
+    </div>
+    <footer>
+      <a href="index.html"><img src="/favicon-32x32.png" alt=""></a>
+    </footer>
+    
+
+    <script src="js/piglatin.js"></script>
+  </body>
+</html>
