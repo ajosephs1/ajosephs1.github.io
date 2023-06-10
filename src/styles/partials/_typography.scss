@@ -1,6 +1,6 @@
 // fonts
 @font-face {
-    font-family: "MADEINFINITY";
+    font-family: "MADEINFINITY PERSONALUSE-Bold";
     src: url("../assets/fonts/MADEINFINITY PERSONALUSE-Black.otf") format("opentype");
     font-style: normal;
     font-display: swap;
@@ -28,4 +28,12 @@
     src: url("../assets/fonts/MADEINFINITY PERSONALUSE-Thin.otf") format("opentype");
     font-style: thin;
     font-display: swap;
+}
+
+// mixins
+@mixin legend{
+    font-family: "MADEINFINITY PERSONALUSE-Medium";
+    font-size: 2.25rem;
+    margin: auto;
+    padding: 0 2rem;
 }
