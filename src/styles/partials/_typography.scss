@@ -1,39 +1,55 @@
 // fonts
 @font-face {
     font-family: "MADEINFINITY PERSONALUSE-Bold";
-    src: url("../assets/fonts/MADEINFINITY PERSONALUSE-Black.otf") format("opentype");
+    src: url("../../assets/fonts/MADEINFINITY\ PERSONALUSE-Black.otf") format("opentype");
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: "MADEINFINITY PERSONALUSE-Light";
-    src: url("../assets/fonts/MADEINFINITY PERSONALUSE-Light.otf") format("opentype");
+    src: url("../../assets/fonts/MADEINFINITY PERSONALUSE-Light.otf") format("opentype");
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: "MADEINFINITY PERSONALUSE-Medium";
-    src: url("../assets/fonts/MADEINFINITY PERSONALUSE-Medium.otf") format("opentype");
+    src: url("../../assets/fonts/MADEINFINITY PERSONALUSE-Medium.otf") format("opentype");
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: "MADEINFINITY PERSONALUSE-Regular";
-    src: url("../assets/fonts/MADEINFINITY PERSONALUSE-Regular.otf") format("opentype");
+    src: url("../../assets/fonts/MADEINFINITY PERSONALUSE-Regular.otf") format("opentype");
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: "MADEINFINITY PERSONALUSE-Thin";
-    src: url("../assets/fonts/MADEINFINITY PERSONALUSE-Thin.otf") format("opentype");
+    src: url("../../assets/fonts/MADEINFINITY PERSONALUSE-Thin.otf") format("opentype");
     font-style: thin;
     font-display: swap;
 }
 
 // mixins
 @mixin legend{
-    font-family: "MADEINFINITY PERSONALUSE-Medium";
-    font-size: 2.25rem;
+    font-family: "MADEINFINITY PERSONALUSE-Medium", sans-serif;
+    font-size: 2rem;
     margin: auto;
     padding: 0 2rem;
+    color: #010101;
+    @content;
+}
+
+@mixin body-mobile{
+    font-family: "MADEINFINITY PERSONALUSE-Light", sans-serif;
+    font-size: 0.75rem;
+    margin: auto;
+    color: #151515;
+}
+
+@mixin body-td{
+    font-family: "MADEINFINITY PERSONALUSE-Regular", sans-serif;
+    font-size: 1rem;
+    margin: auto;
+    color: #f8f9fa;
 }

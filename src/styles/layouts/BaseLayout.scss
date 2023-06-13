@@ -1,31 +1,26 @@
-@use "../global.scss" as*;
+@use "../global.scss" as *;
 
 body {
-    height: 100vh;
-    background-image: url('../../assets/images/behance-6462719521ad7.png');
-    background-position: center;
-    background-blend-mode: lighten;
-    background-size: cover;
-    background-repeat: repeat-y;
+    background-color: #1AA36D ;
 }
 
 h1 {
-    font-family: "MADEINFINITY PERSONALUSE-Bold";
-    font-size: 2.5rem;
+  font-family: "MADEINFINITY PERSONALUSE-Bold";
+  font-size: 2.5rem;
 }
 h2 {
-    font-family: "MADEINFINITY PERSONALUSE-Light";
-    font-size: 1.5rem;
+  font-family: "MADEINFINITY PERSONALUSE-Light";
+  font-size: 1.5rem;
 }
 h3 {
-    font-family: "MADEINFINITY PERSONALUSE-Medium";
-    font-size: 1.5rem;
+  font-family: "MADEINFINITY PERSONALUSE-Medium";
+  font-size: 1.5rem;
 }
 h4 {
-    font-family: "MADEINFINITY PERSONALUSE-Regular";
-    font-size: 1.5rem;
+  font-family: "MADEINFINITY PERSONALUSE-Regular";
+  font-size: 1.5rem;
 }
 h5 {
-    font-family: "MADEINFINITY PERSONALUSE-Thin";
-    font-size: 1.5rem;
+  font-family: "MADEINFINITY PERSONALUSE-Thin";
+  font-size: 1.5rem;
 }

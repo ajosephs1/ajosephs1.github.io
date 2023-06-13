@@ -1,20 +1,202 @@
-@use "../partials/typography" as*;
+@use "../partials/typography" as *;
 @use "../partials/layout" as *;
 
-.fieldset {
+.profile {
+  height: 100%;
+  margin: 1rem;
+  border: 1.5px solid #010101;;;
+  border-radius: 0.75rem;
 
-  &__profile {
-    margin: 1rem;
-    border: 2px solid grey;
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 2rem;
+    border-right: none;
     border-bottom: none;
-    border-radius: 0.25rem 0.25rem 0 0;
-    
-    @include tablet{
+    border-radius: 0.75rem 0 0 0;
+  }
 
+  &__legend {
+    @include legend;
+    @include tablet {
+      margin: 0 0 0 auto;
     }
+  }
+
+  &__picture {
+    display: block;
+    margin: 1.5rem auto;
+    width: 60%;
+    border-radius: 0.75rem;
+    // filter: grayscale(100%) opacity(95%);
+
+    @include tablet {
+      width: 45%;
+      margin: 0;
+      margin-left: 0.5rem;
+    }
+  }
+
+  &__biography {
+    @include tablet {
+      text-align: justify;
+      text-align-last: right;
+      width: 50%;
+    }
+  }
+
+  &__bio-text {
+    @include body-mobile;
+    margin: 0 auto 0.5rem;
+
+    @include tablet {
+      @include body-td;
+      margin: 1rem 0.5rem;
+    }
+  }
 }
 
-  &__legend{
-    @include legend
+@keyframes changeContent {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.skills {
+  height: 100%;
+  margin: 1rem;
+  border: 1.5px solid #010101;;
+  border-radius: 0.75rem;
+
+  @include tablet {
+    margin: 1rem 2rem;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 0.75rem 0 0 0;
+  }
+
+  &__legend {
+    @include legend;
+    @include tablet {
+      margin: 0 0 0 auto;
+    }
+  }
+
+  &__container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  &__icon {
+    width: 5rem;
+    transition: all 0.25s linear;
+
+    @include tablet{
+      width: 7rem;
+    }
+
+    &--html5 {
+      &:hover {
+        content: url("../../assets/icons/light/html5.svg");
+        animation: changeContent 0.25s linear forwards;
+      }
+    }
+
+    &--css {
+      &:hover {
+        content: url("../../assets/icons/light/css3.svg");
+        animation: changeContent 0.25s linear forwards;
+      }
+    }
+
+    &--js {
+      &:hover {
+        content: url("../../assets/icons/light/js.svg");
+        animation: changeContent 0.25s linear forwards;
+      }
+    }
+
+    &--nodejs {
+      &:hover {
+        content: url("../../assets/icons/light/nodejs.svg");
+        animation: changeContent 0.25s linear forwards;
+      }
+    }
+
+    &--mysql {
+      &:hover {
+        content: url("../../assets/icons/light/mysql.svg");
+        animation: changeContent 0.25s linear forwards;
+      }
+    }
+    
+    &--reactjs {
+      &:hover {
+        content: url("../../assets/icons/light/reactjs.svg");
+        animation: changeContent 0.25s linear forwards;
+      }
+    }
+
+    &--sass {
+      &:hover {
+        content: url("../../assets/icons/light/sass.svg");
+        animation: changeContent 0.25s linear forwards;
+      }
+    }
+
+    &--astro {
+      &:hover {
+        content: url("../../assets/icons/light/astro.svg");
+        animation: changeContent 0.25s linear forwards;
+      }
+    }
+
+    &--netlify {
+      &:hover {
+        content: url("../../assets/icons/light/netlify.svg");
+        animation: changeContent 0.25s linear forwards;
+      }
+    }
+
+    &--vs {
+      &:hover {
+        content: url("../../assets/icons/light/vs.svg");
+        animation: changeContent 0.25s linear forwards;
+      }
+    }
+
+    &--git {
+      &:hover {
+        content: url("../../assets/icons/light/git.svg");
+        animation: changeContent 0.25s linear forwards;
+      }
+    }
+
+    &--postman {
+      &:hover {
+        content: url("../../assets/icons/light/postman.svg");
+        animation: changeContent 0.25s linear forwards;
+      }
+    }
+
+    &--ps {
+      &:hover {
+        content: url("../../assets/icons/light/ps.svg");
+        animation: changeContent 0.25s linear forwards;
+      }
+    }
+
+    &--jest {
+      &:hover {
+        content: url("../../assets/icons/light/jest.svg");
+        animation: changeContent 0.25s linear forwards;
+      }
+    }
   }
 }
