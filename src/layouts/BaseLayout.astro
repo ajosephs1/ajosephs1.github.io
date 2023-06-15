@@ -1,7 +1,8 @@
 ---
-import "./ProfileLayout.astro"
-import "../styles/layouts/BaseLayout.scss"
 import ProfileLayout from "./ProfileLayout.astro";
+import ProjectLayout from "./ProjectLayout.astro";
+import ContactLayout from "./ContactLayout.astro";
+import "../styles/layouts/BaseLayout.scss"
 ---
 
 <html lang="en">
@@ -14,6 +15,8 @@ import ProfileLayout from "./ProfileLayout.astro";
 	</head>
 	<body>
 		<ProfileLayout/>
+		<ProjectLayout/>
+		<ContactLayout/>
 	</body>
 </html>
 <!-- have a fieldset layout for profile introduction -->

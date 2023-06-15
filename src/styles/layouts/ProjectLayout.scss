@@ -1,0 +1,100 @@
+@use "../partials/typography" as *;
+@use "../partials/layout" as *;
+@use "../partials/colours" as *;
+
+.projects {
+  background-color: $ivory;
+  padding: 1rem 0 2rem;
+  width: 100%;
+
+  &__heading {
+    @include legend;
+    text-align: center;
+    margin: auto;
+  }
+}
+
+.project {
+  height: 100%;
+  margin: 1rem;
+  border: 1.5px solid $black;
+  border-radius: 0.75rem;
+
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 2rem;
+    border-right: none;
+    border-left: none;
+    border-bottom: none;
+    border-radius: 0;
+  }
+
+  &__legend {
+    @include legend;
+    font-size: 1.5rem;
+
+    @include tablet {
+      margin: 0 0 0 auto;
+    }
+  }
+
+  &__mockup {
+    background-image: url("../../assets/images/mockup-dark.svg");
+    background-position: center;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @include tablet {
+      width: 60%;
+      margin: 0;
+      margin-left: 0.5rem;
+    }
+  }
+
+  &__gif {
+    margin: auto;
+    width: 100%;
+    transform: scale(0.8);
+    top: 2rem;
+  }
+
+  &__information{
+    @include tablet{
+      width: 40%
+    }
+  }
+
+  &__description {
+    @include body-mobile;
+    margin: 0 auto 0.5rem;
+
+    @include tablet {
+      @include body-td;
+      margin: 1rem 0.5rem;
+    }
+  }
+
+  &__techstack {
+    @include body-mobile;
+    margin: 0 0.25rem 0.25rem;
+    background-color: #4a4238;
+    border-radius: 0.25rem;
+    color: #f4f9e9;
+    padding: 0.25rem 0.5rem;
+
+    &-container {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    &-heading {
+      text-align: center;
+      padding: 0.25rem 0 0.5rem;
+      font-family: "MADEINFINITY PERSONALUSE-Regular";
+    }
+  }
+}
