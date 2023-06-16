@@ -3,7 +3,7 @@
 @use "../partials/layout" as *;
 
 .hero {
-    height: 100vh;
+  height: 100vh;
   width: 100%;
   text-align: center;
   background-image: url("../../assets/images/behance-6462719521ad7.png");
@@ -38,10 +38,10 @@
       color: $ivory;
       margin: 0 0.5rem;
       text-decoration: none;
-
+      box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
       transition: 0.15s ease-in-out;
 
-      &:hover{
+      &:hover {
         color: $burnt-sienna;
       }
     }
@@ -64,17 +64,17 @@
   &__title {
     font-family: "Kimura", sans-serif;
     font-size: 3.75rem;
-    
-    @include tablet {
-        font-size: 6rem;
-    }
-}
 
-&__sub-title{
+    @include tablet {
+      font-size: 6rem;
+    }
+  }
+
+  &__sub-title {
     font-family: "MADEINFINITY PERSONALUSE-Regular";
     font-size: 1rem;
     @include tablet {
-        font-size: 2rem;
+      font-size: 2rem;
     }
   }
 }
