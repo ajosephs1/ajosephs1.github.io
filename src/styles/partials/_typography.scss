@@ -31,6 +31,12 @@
     font-style: thin;
     font-display: swap;
 }
+@font-face {
+    font-family: "Kimura";
+    src: url("../../assets/fonts/Kimura.otf") format("opentype");
+    font-style: normal;
+    font-display: swap;
+}
 
 // mixins
 @mixin legend{

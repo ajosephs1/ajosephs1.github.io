@@ -1,6 +1,10 @@
 @use "../global.scss" as *;
 @use "../partials/colours" as *;
 
+html{
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: $ivory ;
 }
