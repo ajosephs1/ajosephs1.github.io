@@ -52,11 +52,16 @@
   }
 
   &__text {
-    margin: auto;
-    padding: 17rem 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     color: $ivory;
 
     @include tablet {
+      margin: auto;
+      height: fit-content;
+      padding: 17rem 0;
       max-width: 80rem;
     }
   }
