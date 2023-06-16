@@ -3,8 +3,13 @@
 @use "../partials/colours" as *;
 
 
-.main{
+.intro{
   padding-bottom: 1rem;
+  @include tablet{
+    padding: 2rem 0 2rem;
+    max-width: 80rem;
+    margin: auto
+  }
 }
 
 .profile {
@@ -35,10 +40,11 @@
     width: 100%;
     max-width: 22.25rem;
     border-radius: 0.75rem;
-    // filter: grayscale(100%) opacity(95%);
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
 
     @include tablet {
       width: 45%;
+      height: fit-content;
       margin: 0;
       margin-left: 0.5rem;
     }
@@ -46,8 +52,7 @@
 
   &__biography {
     @include tablet {
-      text-align: justify;
-      text-align-last: right;
+      text-align: right;
       width: 50%;
     }
   }

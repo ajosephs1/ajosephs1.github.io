@@ -1,3 +1,5 @@
+@use "./layout" as *;
+
 // fonts
 @font-face {
     font-family: "MADEINFINITY PERSONALUSE-Bold";
@@ -37,19 +39,23 @@
     margin: auto;
     padding: 0 2rem;
     color: #010101;
+
+    @include tablet{
+        font-size: 2.5rem
+    };
     @content;
 }
 
 @mixin body-mobile{
     font-family: "MADEINFINITY PERSONALUSE-Light", sans-serif;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     margin: auto;
     color: #151515;
 }
 
 @mixin body-td{
     font-family: "MADEINFINITY PERSONALUSE-Light", sans-serif;
-    font-size: 1rem;
+    font-size: 1.25rem;
     margin: auto;
     color: #151515;
 }

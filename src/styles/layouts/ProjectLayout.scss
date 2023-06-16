@@ -3,9 +3,13 @@
 @use "../partials/colours" as *;
 
 .projects {
-  background-color: $ivory;
+  background-color: $parakeet;
   padding: 1rem 0 2rem;
   width: 100%;
+
+  @include tablet{
+    padding: 2rem
+  }
 
   &__heading {
     @include legend;
@@ -23,11 +27,15 @@
   @include tablet {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 1rem 2rem;
     border-right: none;
     border-left: none;
     border-bottom: none;
     border-radius: 0;
+    padding: 2rem 0 2rem;
+    max-width: 80rem;
+    margin: auto;
   }
 
   &__legend {
@@ -60,9 +68,9 @@
     top: 2rem;
   }
 
-  &__information{
-    @include tablet{
-      width: 40%
+  &__information {
+    @include tablet {
+      width: 40%;
     }
   }
 
@@ -71,6 +79,8 @@
     margin: 0 auto 0.5rem;
 
     @include tablet {
+      text-align: right;
+
       @include body-td;
       margin: 1rem 0.5rem;
     }
@@ -78,11 +88,16 @@
 
   &__techstack {
     @include body-mobile;
+    cursor: pointer;
     margin: 0 0.25rem 0.25rem;
-    background-color: #4a4238;
+    background-color: $taupe;
     border-radius: 0.25rem;
     color: #f4f9e9;
     padding: 0.25rem 0.5rem;
+
+    @include tablet {
+      font-size: 1.25rem;
+    }
 
     &-container {
       width: 100%;
@@ -95,6 +110,10 @@
       text-align: center;
       padding: 0.25rem 0 0.5rem;
       font-family: "MADEINFINITY PERSONALUSE-Regular";
+
+      @include tablet {
+        font-size: 1.25rem;
+      }
     }
   }
 }

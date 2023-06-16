@@ -1,10 +1,23 @@
 ---
-import "../styles/layouts/ContactLayout.scss"
+import mail from "../assets/icons/social/envelope-solid.svg";
+import github from "../assets/icons/social/github.svg";
+import linkeldin from "../assets/icons/social/linkedin.svg";
+import "../styles/layouts/ContactLayout.scss";
 ---
 
 <article class="contact">
-    <fieldset class="contact__fieldset">
-        <legend class="contact__legend">CONTACT ME</legend>
-        <form action="" class="contact__form"></form>
-      </fieldset>
+  <fieldset class="contact__fieldset">
+    <legend class="contact__legend">CONTACT ME</legend>
+    <div class="contact__links">
+      <a href="mailto: ajosephs1@babson.edu" target="_blank" class="contact__link">
+        <img src={mail} alt="email icon" class="contact__icon" />
+      </a>
+      <a href="https://linkedin.com/in/andrewjosephs1/" target="_blank" class="contact__link">
+        <img src={linkeldin} alt="linkein icon" class="contact__icon" />
+      </a>
+      <a href="https://github.com/ajosephs1" target="_blank" class="contact__link">
+        <img src={github} alt="github icon" class="contact__icon" />
+      </a>
+    </div>
+  </fieldset>
 </article>

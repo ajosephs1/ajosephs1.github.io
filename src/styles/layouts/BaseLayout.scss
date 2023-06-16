@@ -1,6 +1,7 @@
 @use "../global.scss" as *;
+@use "../partials/colours" as *;
 
 body {
-    background-color: #1AA36D ;
+    background-color: $ivory ;
 }
 

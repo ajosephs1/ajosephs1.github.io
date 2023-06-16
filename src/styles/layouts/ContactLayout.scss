@@ -2,7 +2,54 @@
 @use "../partials/layout" as *;
 @use "../partials/colours" as *;
 
-.contact{
-    padding: 1rem 0 2rem;
-    background-color: $burnt-sienna;
+.contact {
+  padding: 1rem 0 2rem;
+  // background-color: $;
+
+  &__fieldset {
+    height: 100%;
+    margin: 0 1rem;
+    border: 1.5px solid $black;
+    border-radius: 0.75rem;
+
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      margin: 1rem 2rem;
+      border: none;
+    }
+  }
+  &__legend {
+    @include legend;
+    
+  }
+
+  &__links {
+    width: 100%;
+    text-align: center;
+    @include tablet {
+      margin: 2rem 0;
+    }
+  }
+
+  &__link {
+    margin: 0 1rem;
+    @include tablet {
+      margin: 0 2rem;
+    }
+  }
+
+  &__icon {
+    width: 3rem;
+    transition:  all 0.2s linear;
+
+    &:hover {
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+
+    @include tablet{
+        width: 4rem;
+    }
+  }
 }
