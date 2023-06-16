@@ -1,25 +1,31 @@
 ---
-import Hero from "../components/Hero.astro"
+import Hero from "../components/Hero.astro";
 import ProfileLayout from "../components/Profile.astro";
 import ProjectLayout from "../components/Projects.astro";
 import ContactLayout from "../components/Contact.astro";
-import "../styles/layouts/BaseLayout.scss"
+import "../styles/layouts/BaseLayout.scss";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<Hero/>
-		<ProfileLayout/>
-		<ProjectLayout/>
-		<ContactLayout/>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#f4f9e9" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Andrew Josephs</title>
+  </head>
+  <body>
+    <Hero />
+    <ProfileLayout />
+    <ProjectLayout />
+    <ContactLayout />
+  </body>
 </html>
 <!-- have a fieldset layout for profile introduction -->
 <!-- have a fieldset layout for each project containing image title description and technology used -->
