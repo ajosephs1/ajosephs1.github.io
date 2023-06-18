@@ -2,6 +2,8 @@
 import wehyuhdehgif from "../assets/images/wehyuhdehgif.gif";
 import amexgif from "../assets/images/amexindustry.gif";
 import got from "../assets/images/gotgenerator.jpg";
+import github from "../assets/icons/content/github-sienna.svg";
+import linkIcon from "../assets/icons/content/link-icon.svg";
 import "../styles/components/Projects.scss";
 ---
 
@@ -11,10 +13,18 @@ import "../styles/components/Projects.scss";
     <legend class="project__legend">WEH YUH DEH</legend>
     <div class="project__mockup">
       <img src={wehyuhdehgif} alt="application demo" class="project__gif" />
-    </div><div class="project__information">
+    </div>
+    <div class="project__information">
+      <div class="project__links">
+        <a
+          href="https://github.com/ajosephs1/capstone-wehyuhdeh"
+          class="project__link project__link--github"
+          ><img src={github} class="project__github" /></a
+        >
+      </div>
       <p class="project__description">
-        An app created to assist the Jamaican diaspora to find resources,
-        events and Jamaican-approved services abroad.
+        An app created to assist the Jamaican diaspora to find resources, events
+        and Jamaican-approved services abroad.
       </p>
       <p class="project__techstack-heading">TECH STACK</p>
       <div class="project__techstack-container">
@@ -34,11 +44,17 @@ import "../styles/components/Projects.scss";
       <img src={amexgif} alt="application demo" class="project__gif" />
     </div>
     <div class="project__information">
+      <div class="project__links">
+        <a
+          href="https://github.com/ajosephs1/amex-industry-project"
+          class="project__link project__link--github"
+          ><img src={github} class="project__github" /></a
+        >
+      </div>
       <p class="project__description">
         During a 24-hour hackathon for an industry event, I was tasked with
-        creating a solution for American Express' client support model. This
-        app mocks an AI assisted chat bot to resolve client
-        issues.
+        creating a solution for American Express' client support model. This app
+        mocks an AI assisted chat bot to resolve client issues.
       </p>
       <p class="project__techstack-heading">TECH STACK</p>
       <div class="project__techstack-container">
@@ -50,15 +66,27 @@ import "../styles/components/Projects.scss";
     </div>
   </fieldset>
 
-  <fieldset class="project project--wehyuhdeh">
+  <fieldset class="project project--got">
     <legend class="project__legend">GOT Quote Generator</legend>
     <div class="project__mockup">
       <img src={got} alt="application demo" class="project__gif" />
     </div>
     <div class="project__information">
+      <div class="project__links">
+        <a
+          href="https://www.andrewjosephs.com/game-of-thrones-quote-generator/"
+          class="project__link project__link--url"
+          ><img src={linkIcon} class="project__url" /></a
+        >
+        <a
+          href="https://github.com/ajosephs1/game-of-thrones-quote-generator"
+          class="project__link project__link--github"
+          ><img src={github} class="project__github" /></a
+        >
+      </div>
       <p class="project__description">
-        An app created to generate random quotes using a Game of Thrones quotes API,
-        built with React.
+        An app created to generate random quotes using a Game of Thrones quotes
+        API, built with React.
       </p>
       <p class="project__techstack-heading">TECH STACK</p>
       <div class="project__techstack-container">
