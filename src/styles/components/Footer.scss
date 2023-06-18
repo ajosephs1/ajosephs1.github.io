@@ -6,16 +6,49 @@
   margin: auto;
   width: 100%;
   padding: 0 1rem 1rem;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @include tablet {
     max-width: 80rem;
     padding: 0 1rem 2rem;
   }
+
+  &__flex-container {
+    display: flex;
+    align-items: center;
+  }
+
   &__text {
     @include body-mobile;
     color: $footer-text;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    padding-right: 0.325rem;
+    margin: 0;
+
+    @include tablet {
+      font-size: 1rem;
+    }
+  }
+
+  &__icon {
+    height: 0.75rem;
+    transform: rotate(-45deg);
+    color: $footer-text;
+    fill: $footer-text;
+
+    @include tablet {
+      height: 0.85rem;
+    }
+  }
+
+  &__copyright {
+    @include body-mobile;
+    color: $footer-text;
+    font-size: 0.8rem;
+    padding-left: 1rem;
+    margin: 0;
 
     @include tablet {
       font-size: 1rem;
