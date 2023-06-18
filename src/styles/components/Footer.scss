@@ -1,0 +1,24 @@
+@use "../partials/typography" as *;
+@use "../partials/layout" as *;
+@use "../partials/colours" as *;
+
+.footer {
+  margin: auto;
+  width: 100%;
+  padding: 0 1rem 1rem;
+  text-align: center;
+
+  @include tablet {
+    max-width: 80rem;
+    padding: 0 1rem 2rem;
+  }
+  &__text {
+    @include body-mobile;
+    color: $footer-text;
+    font-size: 0.85rem;
+
+    @include tablet {
+      font-size: 1rem;
+    }
+  }
+}
