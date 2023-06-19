@@ -87,33 +87,37 @@
     justify-content: center;
     align-items: center;
     margin: 0 0.825rem;
+    transition: all 0.125s linear;
+
+    &:hover {
+      transform: scale(1.2);
+      cursor: pointer;
+    }
 
     @include tablet {
       margin: 0 1rem 0.825rem;
     }
 
     &--url {
-      &:hover{
-        background-color: $burnt-sienna;
-      }
       background-color: $taupe;
 
-      @include tablet{
+      @include tablet {
         padding: 0.375;
       }
 
       padding: 0.5rem;
     }
-
+    
     &--github {
       background-color: $ivory;
+      // border-radius: 100%;
     }
   }
 
   &__url {
     width: 1.25rem;
     aspect-ratio: 1 / 1;
-    
+
     @include tablet {
       width: 2rem;
     }
@@ -122,7 +126,7 @@
   &__github {
     width: 2.25rem;
     aspect-ratio: 1 / 1;
-    
+
     @include tablet {
       width: 3rem;
     }
