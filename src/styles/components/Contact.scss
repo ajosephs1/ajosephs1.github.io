@@ -18,36 +18,46 @@
       margin: 1rem 2rem;
     }
   }
-  
+
   &__legend {
     @include legend;
   }
-  
+
   &__links {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     width: 100%;
-    
+
     @include tablet {
       margin: 2rem 0;
     }
   }
-  
+
   &__link {
     margin: 0 1.25rem;
-    
+
     @include tablet {
       margin: 0 2rem;
     }
   }
-  
+
   &__icon {
     display: block;
     width: 3rem;
+    -webkit-transition: all 0.125s linear;
+    -o-transition: all 0.125s linear;
     transition: all 0.125s linear;
 
     &:hover {
+      -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
       transform: scale(1.2);
       cursor: pointer;
     }

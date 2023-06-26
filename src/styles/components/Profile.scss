@@ -2,13 +2,12 @@
 @use "../partials/layout" as *;
 @use "../partials/colours" as *;
 
-
-.intro{
+.intro {
   padding-bottom: 1rem;
-  @include tablet{
+  @include tablet {
     padding: 2rem 0 2rem;
     max-width: 80rem;
-    margin: auto
+    margin: auto;
   }
 }
 
@@ -19,7 +18,11 @@
   border-radius: 0.75rem;
 
   @include tablet {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     margin: 1rem 2rem;
     border-right: none;
@@ -36,14 +39,17 @@
 
   &__picture {
     display: block;
-    margin: 0 auto 1.5rem ;
+    margin: 0 auto 1.5rem;
     width: 100%;
     max-width: 22.25rem;
     border-radius: 0.75rem;
+    -webkit-box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
 
     @include tablet {
       width: 45%;
+      height: -webkit-fit-content;
+      height: -moz-fit-content;
       height: fit-content;
       margin: 0;
       margin-left: 0.5rem;
@@ -84,7 +90,7 @@
 .skills {
   height: 100%;
   margin: 1rem;
-  border: 1.5px solid #010101;;
+  border: 1.5px solid #010101;
   border-radius: 0.75rem;
 
   @include tablet {
@@ -101,26 +107,34 @@
     }
   }
 
-  &__container{
+  &__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
   }
   &__icon {
     width: 5rem;
+    -webkit-transition: all 0.25s linear;
+    -o-transition: all 0.25s linear;
     transition: all 0.25s linear;
-    
-    &:hover{
+
+    &:hover {
       cursor: pointer;
     }
 
-    @include tablet{
+    @include tablet {
       width: 7rem;
     }
 
     &--html5 {
       &:hover {
         content: url("../../assets/icons/light/html5.svg");
+        -webkit-animation: changeContent 0.25s linear forwards;
         animation: changeContent 0.25s linear forwards;
       }
     }
@@ -128,6 +142,7 @@
     &--css {
       &:hover {
         content: url("../../assets/icons/light/css3.svg");
+        -webkit-animation: changeContent 0.25s linear forwards;
         animation: changeContent 0.25s linear forwards;
       }
     }
@@ -135,6 +150,7 @@
     &--js {
       &:hover {
         content: url("../../assets/icons/light/js.svg");
+        -webkit-animation: changeContent 0.25s linear forwards;
         animation: changeContent 0.25s linear forwards;
       }
     }
@@ -142,6 +158,7 @@
     &--nodejs {
       &:hover {
         content: url("../../assets/icons/light/nodejs.svg");
+        -webkit-animation: changeContent 0.25s linear forwards;
         animation: changeContent 0.25s linear forwards;
       }
     }
@@ -149,13 +166,15 @@
     &--mysql {
       &:hover {
         content: url("../../assets/icons/light/mysql.svg");
+        -webkit-animation: changeContent 0.25s linear forwards;
         animation: changeContent 0.25s linear forwards;
       }
     }
-    
+
     &--reactjs {
       &:hover {
         content: url("../../assets/icons/light/reactjs.svg");
+        -webkit-animation: changeContent 0.25s linear forwards;
         animation: changeContent 0.25s linear forwards;
       }
     }
@@ -163,6 +182,7 @@
     &--sass {
       &:hover {
         content: url("../../assets/icons/light/sass.svg");
+        -webkit-animation: changeContent 0.25s linear forwards;
         animation: changeContent 0.25s linear forwards;
       }
     }
@@ -170,6 +190,7 @@
     &--astro {
       &:hover {
         content: url("../../assets/icons/light/astro.svg");
+        -webkit-animation: changeContent 0.25s linear forwards;
         animation: changeContent 0.25s linear forwards;
       }
     }
@@ -177,6 +198,7 @@
     &--netlify {
       &:hover {
         content: url("../../assets/icons/light/netlify.svg");
+        -webkit-animation: changeContent 0.25s linear forwards;
         animation: changeContent 0.25s linear forwards;
       }
     }
@@ -184,6 +206,7 @@
     &--vs {
       &:hover {
         content: url("../../assets/icons/light/vs.svg");
+        -webkit-animation: changeContent 0.25s linear forwards;
         animation: changeContent 0.25s linear forwards;
       }
     }
@@ -191,6 +214,7 @@
     &--git {
       &:hover {
         content: url("../../assets/icons/light/git.svg");
+        -webkit-animation: changeContent 0.25s linear forwards;
         animation: changeContent 0.25s linear forwards;
       }
     }
@@ -198,6 +222,7 @@
     &--postman {
       &:hover {
         content: url("../../assets/icons/light/postman.svg");
+        -webkit-animation: changeContent 0.25s linear forwards;
         animation: changeContent 0.25s linear forwards;
       }
     }
@@ -205,6 +230,7 @@
     &--ps {
       &:hover {
         content: url("../../assets/icons/light/ps.svg");
+        -webkit-animation: changeContent 0.25s linear forwards;
         animation: changeContent 0.25s linear forwards;
       }
     }
@@ -212,6 +238,7 @@
     &--jest {
       &:hover {
         content: url("../../assets/icons/light/jest.svg");
+        -webkit-animation: changeContent 0.25s linear forwards;
         animation: changeContent 0.25s linear forwards;
       }
     }
