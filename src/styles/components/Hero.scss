@@ -12,18 +12,26 @@
   padding: 1rem;
 
   @include tablet {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
     padding: 2rem;
   }
 
   &__nav {
     margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     font-family: "Kimura", sans-serif;
     font-size: 1rem;
 
     @include tablet {
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
       justify-content: flex-end;
       max-width: 80rem;
       font-size: 1.5rem;
@@ -31,6 +39,8 @@
 
     &-link {
       padding: 0.2rem 0.5rem;
+      -webkit-transform: skew(-20deg);
+      -ms-transform: skew(-20deg);
       transform: skew(-20deg);
       background-color: $taupe;
       border: 2px solid $ivory;
@@ -38,7 +48,10 @@
       color: $ivory;
       margin: 0 0.5rem;
       text-decoration: none;
+      -webkit-box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
       box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+      -webkit-transition: 0.15s ease-in-out;
+      -o-transition: 0.15s ease-in-out;
       transition: 0.15s ease-in-out;
 
       &:hover {
@@ -47,19 +60,30 @@
     }
 
     &-text {
+      -webkit-transform: skew(20deg);
+      -ms-transform: skew(20deg);
       transform: skew(20deg);
     }
   }
 
   &__text {
     height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     color: $ivory;
 
     @include tablet {
       margin: auto;
+      height: -webkit-fit-content;
+      height: -moz-fit-content;
       height: fit-content;
       padding: 17rem 0;
       max-width: 80rem;
