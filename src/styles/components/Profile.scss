@@ -58,13 +58,11 @@
       height: -moz-fit-content;
       height: fit-content;
       margin: 1rem 1rem 0 2rem;
-      // margin-left: 2rem;
     }
   }
 
   &__biography {
     @include tablet {
-      text-align: right;
       width: 50%;
     }
   }
