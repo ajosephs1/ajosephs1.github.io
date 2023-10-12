@@ -135,8 +135,6 @@
     margin: 0 auto 0.5rem;
 
     @include tablet {
-      text-align: right;
-
       @include body-td;
       margin: 1rem 0.5rem;
     }
@@ -144,7 +142,6 @@
 
   &__techstack {
     @include body-mobile;
-    cursor: pointer;
     margin: 0 0.25rem 0.25rem;
     background-color: $taupe;
     border-radius: 0.25rem;
