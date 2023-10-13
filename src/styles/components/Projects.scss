@@ -133,10 +133,14 @@
   &__description {
     @include body-mobile;
     margin: 0 auto 0.5rem;
+    text-align: justify;
+    hyphens: auto;
 
     @include tablet {
       @include body-td;
       margin: 1rem 0.5rem;
+      text-align: left;
+      hyphens: none;
     }
   }
 
