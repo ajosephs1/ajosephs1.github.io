@@ -12,8 +12,11 @@ import NetlifyIcon from "../assets/icons/dark/netlify.svg";
 import VsIcon from "../assets/icons/dark/vs.svg";
 import GitIcon from "../assets/icons/dark/git.svg";
 import PostmanIcon from "../assets/icons/dark/postman.svg";
-import PsIcon from "../assets/icons/dark/ps.svg";
+import PostgreSQLIcon from "../assets/icons/dark/postgresql.svg";
+import PhotoShopIcon from "../assets/icons/dark/ps.svg";
 import JestIcon from "../assets/icons/dark/jest.svg";
+import NextIcon from "../assets/icons/dark/nextjs.svg";
+import FigmaIcon from "../assets/icons/dark/figma.svg";
 import "../styles/components/Profile.scss";
 ---
 
@@ -28,10 +31,10 @@ import "../styles/components/Profile.scss";
         BrainStation's bootcamp.
       </p>
       <p class="profile__bio-text">
-        While studying Economics at Babson College I was
-        introduced to the world of web-development in the final semester of
-        my senior year. I decided to pivot from the traditional path of finance and economics, as
-        I was captured by the possibility of innovation through code.
+        While studying Economics at Babson College I was introduced to the world
+        of web-development in the final semester of my senior year. I decided to
+        pivot from the traditional path of finance and economics, as I was
+        captured by the possibility of innovation through code.
       </p>
       <p class="profile__bio-text">
         I am passionate about creating impactful applications with simple and
@@ -59,6 +62,16 @@ import "../styles/components/Profile.scss";
         class="skills__icon skills__icon--js"
       />
       <img
+        src={ReactIcon}
+        alt="React icon"
+        class="skills__icon skills__icon--reactjs"
+      />
+      <img
+        src={NextIcon}
+        alt="Next.js icon"
+        class="skills__icon skills__icon--nextjs"
+      />
+      <img
         src={NodeIcon}
         alt="Nodejs icon"
         class="skills__icon skills__icon--nodejs"
@@ -67,11 +80,6 @@ import "../styles/components/Profile.scss";
         src={MySqlIcon}
         alt="MySql icon"
         class="skills__icon skills__icon--mysql"
-      />
-      <img
-        src={ReactIcon}
-        alt="React icon"
-        class="skills__icon skills__icon--reactjs"
       />
       <img
         src={SassIcon}
@@ -99,16 +107,30 @@ import "../styles/components/Profile.scss";
         class="skills__icon skills__icon--git"
       />
       <img
+        src={FigmaIcon}
+        alt="Figma icon"
+        class="skills__icon skills__icon--figma"
+      />
+      <img
         src={PostmanIcon}
         alt="Postman icon"
         class="skills__icon skills__icon--postman"
       />
       <img
-        src={PsIcon}
-        alt="Photoshop icon"
-        class="skills__icon skills__icon--ps"
+        src={PhotoShopIcon}
+        alt="adobe photoshop icon"
+        class="skills__icon skills__icon--photoshop"
       />
-      <img src={JestIcon} alt=" icon" class="skills__icon skills__icon--jest" />
+      <img
+        src={PostgreSQLIcon}
+        alt="postgreSQL icon"
+        class="skills__icon skills__icon--postgresql"
+      />
+      <img
+        src={JestIcon}
+        alt=" jest icon"
+        class="skills__icon skills__icon--jest"
+      />
     </section>
   </fieldset>
 </section>
