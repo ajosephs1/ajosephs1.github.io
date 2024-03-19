@@ -5,11 +5,11 @@
 .intro {
   padding-bottom: 1rem;
   @include tablet {
-    padding: 2rem ;
+    padding: 2rem;
     max-width: 80rem;
     margin: auto;
   }
-  @include desktop{
+  @include desktop {
     padding: 2rem 0;
   }
 }
@@ -32,7 +32,6 @@
     border-bottom: none;
     border-radius: 0.75rem 0 0 0;
     padding: 0;
-
   }
 
   &__legend {
@@ -72,7 +71,7 @@
     margin: 0 auto 0.5rem;
     text-align: justify;
     hyphens: auto;
-    
+
     @include tablet {
       @include body-td;
       margin: 1rem 0.5rem;
@@ -126,130 +125,19 @@
     -ms-flex-pack: center;
     justify-content: center;
   }
+
   &__icon {
     width: 5rem;
-    -webkit-transition: all 0.25s linear;
-    -o-transition: all 0.25s linear;
-    transition: all 0.25s linear;
+    // -webkit-transition: all 0.25s linear;
+    // -o-transition: all 0.25s linear;
+    transition: all 0.125s linear;
 
     &:hover {
-      cursor: pointer;
+      scale: 1.125;
     }
 
     @include tablet {
       width: 7rem;
-    }
-
-    &--html5 {
-      &:hover {
-        content: url("../../assets/icons/light/html5.svg");
-        -webkit-animation: changeContent 0.25s linear forwards;
-        animation: changeContent 0.25s linear forwards;
-      }
-    }
-
-    &--css {
-      &:hover {
-        content: url("../../assets/icons/light/css3.svg");
-        -webkit-animation: changeContent 0.25s linear forwards;
-        animation: changeContent 0.25s linear forwards;
-      }
-    }
-
-    &--js {
-      &:hover {
-        content: url("../../assets/icons/light/js.svg");
-        -webkit-animation: changeContent 0.25s linear forwards;
-        animation: changeContent 0.25s linear forwards;
-      }
-    }
-
-    &--nodejs {
-      &:hover {
-        content: url("../../assets/icons/light/nodejs.svg");
-        -webkit-animation: changeContent 0.25s linear forwards;
-        animation: changeContent 0.25s linear forwards;
-      }
-    }
-
-    &--mysql {
-      &:hover {
-        content: url("../../assets/icons/light/mysql.svg");
-        -webkit-animation: changeContent 0.25s linear forwards;
-        animation: changeContent 0.25s linear forwards;
-      }
-    }
-
-    &--reactjs {
-      &:hover {
-        content: url("../../assets/icons/light/reactjs.svg");
-        -webkit-animation: changeContent 0.25s linear forwards;
-        animation: changeContent 0.25s linear forwards;
-      }
-    }
-
-    &--sass {
-      &:hover {
-        content: url("../../assets/icons/light/sass.svg");
-        -webkit-animation: changeContent 0.25s linear forwards;
-        animation: changeContent 0.25s linear forwards;
-      }
-    }
-
-    &--astro {
-      &:hover {
-        content: url("../../assets/icons/light/astro.svg");
-        -webkit-animation: changeContent 0.25s linear forwards;
-        animation: changeContent 0.25s linear forwards;
-      }
-    }
-
-    &--netlify {
-      &:hover {
-        content: url("../../assets/icons/light/netlify.svg");
-        -webkit-animation: changeContent 0.25s linear forwards;
-        animation: changeContent 0.25s linear forwards;
-      }
-    }
-
-    &--vs {
-      &:hover {
-        content: url("../../assets/icons/light/vs.svg");
-        -webkit-animation: changeContent 0.25s linear forwards;
-        animation: changeContent 0.25s linear forwards;
-      }
-    }
-
-    &--git {
-      &:hover {
-        content: url("../../assets/icons/light/git.svg");
-        -webkit-animation: changeContent 0.25s linear forwards;
-        animation: changeContent 0.25s linear forwards;
-      }
-    }
-
-    &--postman {
-      &:hover {
-        content: url("../../assets/icons/light/postman.svg");
-        -webkit-animation: changeContent 0.25s linear forwards;
-        animation: changeContent 0.25s linear forwards;
-      }
-    }
-
-    &--ps {
-      &:hover {
-        content: url("../../assets/icons/light/ps.svg");
-        -webkit-animation: changeContent 0.25s linear forwards;
-        animation: changeContent 0.25s linear forwards;
-      }
-    }
-
-    &--jest {
-      &:hover {
-        content: url("../../assets/icons/light/jest.svg");
-        -webkit-animation: changeContent 0.25s linear forwards;
-        animation: changeContent 0.25s linear forwards;
-      }
     }
   }
 }
