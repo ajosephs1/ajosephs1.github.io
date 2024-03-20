@@ -64,7 +64,8 @@
     margin: auto;
     width: 100%;
     transform: scale(0.8);
-    top: 2rem;
+    height: auto;
+    aspect-ratio: 16 / 9;
   }
 
   &__information {
@@ -151,6 +152,7 @@
     border-radius: 0.25rem;
     color: #f4f9e9;
     padding: 0.25rem 0.5rem;
+    opacity: 0.85;
 
     @include tablet {
       font-size: 1.25rem;
