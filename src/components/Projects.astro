@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import wehyuhdehgif from "../assets/images/wehyuhdehgif.gif";
 import amexgif from "../assets/images/amexindustry.gif";
 import got from "../assets/images/gotgenerator.jpg";
@@ -14,7 +15,7 @@ import "../styles/components/Projects.scss";
   <fieldset class="project project--cardle">
     <legend class="project__legend">CARDLE</legend>
     <div class="project__mockup">
-      <img src={cardle} alt="application demo" class="project__gif" />
+      <Image src={cardle} alt="application demo" class="project__gif" />
     </div>
     <div class="project__information">
       <div class="project__links">
@@ -22,13 +23,23 @@ import "../styles/components/Projects.scss";
           target="_blank"
           href="https://cardle.boxbox.autos/"
           class="project__link project__link--url"
-          ><img src={linkIcon} class="project__url" alt="link icon" /></a
+          ><img
+            src={linkIcon.src}
+            class="project__url"
+            alt="link icon"
+            loading="lazy"
+          /></a
         >
         <a
           target="_blank"
           href="https://github.com/ajosephs1/cardle"
           class="project__link project__link--github"
-          ><img src={github} class="project__github" alt="github icon" /></a
+          ><img
+            src={github.src}
+            class="project__github"
+            alt="github icon"
+            loading="lazy"
+          /></a
         >
       </div>
       <p class="project__description">
@@ -49,7 +60,7 @@ import "../styles/components/Projects.scss";
   <fieldset class="project project--wehyuhdeh">
     <legend class="project__legend">WEH YUH DEH</legend>
     <div class="project__mockup">
-      <img src={wehyuhdehgif} alt="application demo" class="project__gif" />
+      <Image src={wehyuhdehgif} alt="application demo" class="project__gif" />
     </div>
     <div class="project__information">
       <div class="project__links">
@@ -57,13 +68,23 @@ import "../styles/components/Projects.scss";
           target="_blank"
           href="https://www.loom.com/share/6ac89934c02f4c02a2e47f29c3e4de27"
           class="project__link project__link--url"
-          ><img src={videoIcon} class="project__url" alt="video icon" /></a
+          ><img
+            src={videoIcon.src}
+            class="project__url"
+            alt="video icon"
+            loading="lazy"
+          /></a
         >
         <a
           target="_blank"
           href="https://github.com/ajosephs1/capstone-wehyuhdeh"
           class="project__link project__link--github"
-          ><img src={github} class="project__github" alt="github icon" /></a
+          ><img
+            src={github.src}
+            class="project__github"
+            alt="github icon"
+            loading="lazy"
+          /></a
         >
       </div>
       <p class="project__description">
@@ -82,11 +103,10 @@ import "../styles/components/Projects.scss";
       </div>
     </div>
   </fieldset>
-
   <fieldset class="project project--amex">
     <legend class="project__legend">AMEX CHATBOT</legend>
     <div class="project__mockup">
-      <img src={amexgif} alt="application demo" class="project__gif" />
+      <Image src={amexgif} alt="application demo" class="project__gif" />
     </div>
     <div class="project__information">
       <div class="project__links">
@@ -94,7 +114,12 @@ import "../styles/components/Projects.scss";
           target="_blank"
           href="https://github.com/ajosephs1/amex-industry-project"
           class="project__link project__link--github"
-          ><img src={github} class="project__github" alt="github icon" /></a
+          ><img
+            src={github.src}
+            class="project__github"
+            alt="github icon"
+            loading="lazy"
+          /></a
         >
       </div>
       <p class="project__description">
@@ -112,11 +137,10 @@ import "../styles/components/Projects.scss";
       </div>
     </div>
   </fieldset>
-
   <fieldset class="project project--got">
     <legend class="project__legend">GOT Quote Generator</legend>
     <div class="project__mockup">
-      <img src={got} alt="application demo" class="project__gif" />
+      <Image src={got} alt="application demo" class="project__gif" />
     </div>
     <div class="project__information">
       <div class="project__links">
@@ -124,13 +148,23 @@ import "../styles/components/Projects.scss";
           target="_blank"
           href="https://www.andrewjosephs.com/game-of-thrones-quote-generator/"
           class="project__link project__link--url"
-          ><img src={linkIcon} class="project__url" alt="link icon" /></a
+          ><img
+            src={linkIcon.src}
+            class="project__url"
+            alt="link icon"
+            loading="lazy"
+          /></a
         >
         <a
           target="_blank"
           href="https://github.com/ajosephs1/game-of-thrones-quote-generator"
           class="project__link project__link--github"
-          ><img src={github} class="project__github" alt="github icon" /></a
+          ><img
+            src={github.src}
+            class="project__github"
+            alt="github icon"
+            loading="lazy"
+          /></a
         >
       </div>
       <p class="project__description">

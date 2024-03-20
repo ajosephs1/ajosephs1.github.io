@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import profilePicture from "../assets/images/profile-picture.png";
 import HtmlIcon from "../assets/icons/dark/html5.svg";
 import CssIcon from "../assets/icons/dark/css.svg";
@@ -23,7 +24,12 @@ import "../styles/components/Profile.scss";
 <section class="intro" id="intro">
   <fieldset class="profile">
     <legend class="profile__legend">ABOUT ME</legend>
-    <img src={profilePicture} alt="profile picture" class="profile__picture" />
+    <Image
+      src={profilePicture}
+      alt="Andrew's portrait"
+      class="profile__picture"
+      loading="eager"
+    />
     <section class="profile__biography">
       <p class="profile__bio-text">
         Hello, I am Andrew Josephs, a self-taught web-developer turned
@@ -47,89 +53,106 @@ import "../styles/components/Profile.scss";
     <section class="skills__container">
       <!-- when adding dark and light mode use js to change class ex darkmode: skills__vs-dark -->
       <img
-        src={HtmlIcon}
+        src={HtmlIcon.src}
         alt="html icon"
         class="skills__icon skills__icon--html5"
+        loading="lazy"
       />
       <img
-        src={CssIcon}
+        src={CssIcon.src}
         alt="css icon"
         class="skills__icon skills__icon--css"
+        loading="lazy"
       />
       <img
-        src={JsIcon}
+        src={JsIcon.src}
         alt="JavaScript icon"
         class="skills__icon skills__icon--js"
+        loading="lazy"
       />
       <img
-        src={ReactIcon}
+        src={ReactIcon.src}
         alt="React icon"
         class="skills__icon skills__icon--reactjs"
+        loading="lazy"
       />
       <img
-        src={NextIcon}
+        src={NextIcon.src}
         alt="Next.js icon"
         class="skills__icon skills__icon--nextjs"
+        loading="lazy"
       />
       <img
-        src={NodeIcon}
+        src={NodeIcon.src}
         alt="Nodejs icon"
         class="skills__icon skills__icon--nodejs"
+        loading="lazy"
       />
       <img
-        src={MySqlIcon}
+        src={MySqlIcon.src}
         alt="MySql icon"
         class="skills__icon skills__icon--mysql"
+        loading="lazy"
       />
       <img
-        src={SassIcon}
+        src={SassIcon.src}
         alt=" SASS icon"
         class="skills__icon skills__icon--sass"
+        loading="lazy"
       />
       <img
-        src={AstroIcon}
+        src={AstroIcon.src}
         alt=" Astro icon"
         class="skills__icon skills__icon--astro"
+        loading="lazy"
       />
       <img
-        src={NetlifyIcon}
+        src={NetlifyIcon.src}
         alt="Netlify icon"
         class="skills__icon skills__icon--netlify"
+        loading="lazy"
       />
       <img
-        src={VsIcon}
+        src={VsIcon.src}
         alt="vs code icon"
         class="skills__icon skills__icon--vs"
+        loading="lazy"
       />
       <img
-        src={GitIcon}
+        src={GitIcon.src}
         alt="git icon"
         class="skills__icon skills__icon--git"
+        loading="lazy"
       />
       <img
-        src={FigmaIcon}
+        src={FigmaIcon.src}
         alt="Figma icon"
         class="skills__icon skills__icon--figma"
+        loading="lazy"
       />
       <img
-        src={PostmanIcon}
+        src={PostmanIcon.src}
         alt="Postman icon"
         class="skills__icon skills__icon--postman"
+        loading="lazy"
       />
       <img
-        src={PhotoShopIcon}
+        src={PhotoShopIcon.src}
         alt="adobe photoshop icon"
         class="skills__icon skills__icon--photoshop"
+        loading="lazy"
       />
       <img
-        src={PostgreSQLIcon}
+        src={PostgreSQLIcon.src}
         alt="postgreSQL icon"
         class="skills__icon skills__icon--postgresql"
+        loading="lazy"
       />
       <img
-        src={JestIcon}
+        src={JestIcon.src}
         alt=" jest icon"
         class="skills__icon skills__icon--jest"
+        loading="lazy"
       />
     </section>
   </fieldset>
