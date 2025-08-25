@@ -1,10 +1,10 @@
 ---
 import { Image } from "astro:assets";
 import clearkreak from "../assets/images/clearkreak.gif";
-import padelup from "../assets/images/padelup.gif";
+import padelup from "../assets/images/padelup-screenshot.png";
+import axiosScreenshot from "../assets/images/axios-screenshot.png";
 import wehyuhdehgif from "../assets/images/wehyuhdehgif.gif";
 import amexgif from "../assets/images/amexindustry.gif";
-import got from "../assets/images/gotgenerator.jpg";
 import github from "../assets/icons/content/github-sienna.svg";
 import linkIcon from "../assets/icons/content/link-icon.svg";
 import videoIcon from "../assets/icons/content/video-icon.svg";
@@ -14,73 +14,6 @@ import "../styles/components/Projects.scss";
 
 <section class="projects" id="project">
   <h1 class="projects__heading">PROJECTS</h1>
-  <fieldset class="project project--padelup">
-    <legend class="project__legend">PADEL UP</legend>
-    <div class="project__mockup">
-      <Image src={padelup} alt="application demo" class="project__gif" />
-    </div>
-    <div class="project__information">
-      <div class="project__links">
-        <a
-          target="_blank"
-          href="https://padelup.club/"
-          class="project__link project__link--url"
-          ><img
-            src={linkIcon.src}
-            class="project__url"
-            alt="link icon"
-            loading="lazy"
-          /></a
-        >
-       
-      </div>
-      <p class="project__description">
-        Designed and developed a high-performance website for a Padel club in LA, California, using low-latency techniques and integrating Google Maps. Utilized Webflow's backend to process forms and add mailing list features. Collaborated with the marketing and design teams to iteratively refine the site for optimal brand alignment and user experience.
-      </p>
-      <p class="project__techstack-heading">TECH STACK</p>
-      <div class="project__techstack-container">
-        <span class="project__techstack">React</span>
-        <span class="project__techstack">SASS</span>
-        <span class="project__techstack">Strapi</span>
-        <span class="project__techstack">PostgreSQL</span>
-        <span class="project__techstack">Heroku</span>
-        <span class="project__techstack">REST API</span>
-      </div>
-    </div>
-  </fieldset>
-  <fieldset class="project project--clearkreak">
-    <legend class="project__legend">CLEARKREAK</legend>
-    <div class="project__mockup">
-      <Image src={clearkreak} alt="application demo" class="project__gif" />
-    </div>
-    <div class="project__information">
-      <div class="project__links">
-        <a
-          target="_blank"
-          href="https://www.clearkreakai.com/"
-          class="project__link project__link--url"
-          ><img
-            src={linkIcon.src}
-            class="project__url"
-            alt="link icon"
-            loading="lazy"
-          /></a
-        >
-      </div>
-      <p class="project__description">
-        Designed and developed a Webflow landing website for an AI startup to effectively communicate their value to stakeholders. Leveraged Webflow's templating features to go from ideation to a live product in a two week timeframe.
-      </p>
-      <p class="project__techstack-heading">TECH STACK</p>
-      <div class="project__techstack-container">
-        <span class="project__techstack">React</span>
-        <span class="project__techstack">SASS</span>
-        <span class="project__techstack">Strapi</span>
-        <span class="project__techstack">PostgreSQL</span>
-        <span class="project__techstack">Heroku</span>
-        <span class="project__techstack">REST API</span>
-      </div>
-    </div>
-  </fieldset>
   <fieldset class="project project--cardle">
     <legend class="project__legend">CARDLE</legend>
     <div class="project__mockup">
@@ -123,6 +56,89 @@ import "../styles/components/Projects.scss";
         <span class="project__techstack">PostgreSQL</span>
         <span class="project__techstack">Heroku</span>
         <span class="project__techstack">REST API</span>
+      </div>
+    </div>
+  </fieldset>
+  <fieldset class="project project--padelup">
+    <legend class="project__legend">PADEL UP</legend>
+    <div class="project__mockup">
+      <Image
+        src={padelup}
+        alt="application demo"
+        class="project__gif"
+        widths={[240, 540, 720]}
+        sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px`}
+        format="avif"
+      />
+    </div>
+    <div class="project__information">
+      <div class="project__links">
+        <a
+          target="_blank"
+          href="https://padelup.club/"
+          class="project__link project__link--url"
+          ><img
+            src={linkIcon.src}
+            class="project__url"
+            alt="link icon"
+            loading="lazy"
+          /></a
+        >
+      </div>
+      <p class="project__description">
+        Designed and developed a high-performance website for a Padel club in
+        LA, California, using low-latency techniques and integrating Google
+        Maps. Utilized Webflow's backend to process forms and add mailing list
+        features. Collaborated with the marketing and design teams to
+        iteratively refine the site for optimal brand alignment and user
+        experience.
+      </p>
+      <p class="project__techstack-heading">TECH STACK</p>
+      <div class="project__techstack-container">
+        <span class="project__techstack">Webflow</span>
+        <span class="project__techstack">CSS</span>
+        <span class="project__techstack">CMS</span>
+        <span class="project__techstack">JavaScript</span>
+      </div>
+    </div>
+  </fieldset>
+  <fieldset class="project project--clearkreak">
+    <legend class="project__legend">AXIOS</legend>
+    <div class="project__mockup">
+      <Image
+        src={axiosScreenshot}
+        alt="application demo"
+        class="project__gif"
+        widths={[240, 540, 720]}
+        sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px`}
+        format="avif"
+      />
+    </div>
+    <div class="project__information">
+      <div class="project__links">
+        <a
+          target="_blank"
+          href="https://www.axiosresource.com/"
+          class="project__link project__link--url"
+          ><img
+            src={linkIcon.src}
+            class="project__url"
+            alt="link icon"
+            loading="lazy"
+          /></a
+        >
+      </div>
+      <p class="project__description">
+        Designed and developed a Webflow landing website for a distribuition company to
+        effectively communicate their value to stakeholders. Leveraged Webflow's
+        templating features to go from ideation to a live product in a two week
+        timeframe.
+      </p>
+      <p class="project__techstack-heading">TECH STACK</p>
+      <div class="project__techstack-container">
+        <span class="project__techstack">Webflow</span>
+        <span class="project__techstack">CSS</span>
+        <span class="project__techstack">CMS</span>
       </div>
     </div>
   </fieldset>

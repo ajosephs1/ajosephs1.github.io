@@ -1,8 +1,19 @@
 ---
+import Image from "astro/components/Image.astro";
+import bgImage from "../assets/images/behance-background.png";
 import "../styles/components/Hero.scss";
 ---
 
 <section class="hero">
+  <Image
+    src={bgImage}
+    alt="Green gradient background graphic"
+    class="hero__bground"
+    format="avif"
+    widths={[400, 800, 1200, 1600]}
+    sizes="100vw"
+    loading="eager"
+  />
   <nav class="hero__nav">
     <a href="#intro" class="hero__nav-link"
       ><p class="hero__nav-text">about</p></a
