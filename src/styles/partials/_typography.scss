@@ -56,6 +56,7 @@
 @mixin body-mobile{
     font-family: "MADEINFINITY PERSONALUSE-Light", sans-serif;
     font-size: 1rem;
+    letter-spacing: -0.5px;
     margin: auto;
     color: #151515;
 }
@@ -63,6 +64,7 @@
 @mixin body-td{
     font-family: "MADEINFINITY PERSONALUSE-Light", sans-serif;
     font-size: 1.25rem;
+    letter-spacing: -0.5px;
     margin: auto;
     color: #151515;
 }
