@@ -4,7 +4,7 @@
 
 .hero {
   position: relative;
-  height: 100vh;
+  height: 100dvh;
   width: 100%;
   text-align: center;
   // background-image: url("../../assets/images/behance-background.png");
@@ -116,6 +116,44 @@
     font-size: 1rem;
     @include tablet {
       font-size: 2rem;
+    }
+  }
+
+  &__blog {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    display: block;
+    font-family: "Kimura", sans-serif;
+    font-size: 1rem;
+    width: fit-content;
+    color: $ivory;
+    -webkit-transition: 0.15s ease-in-out;
+    -o-transition: 0.15s ease-in-out;
+    transition: 0.15s ease-in-out;
+    padding: 0.2rem 0.5rem;
+    -webkit-transform: skew(-20deg);
+    -ms-transform: skew(-20deg);
+    transform: translate(-50%, -50%) skew(-20deg);
+    white-space: nowrap;
+    border-radius: 0.25rem;
+    margin: 0 0.5rem;
+    text-decoration: none;
+    -webkit-box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    border: 2px solid transparent;
+
+    &:hover {
+      opacity: 1;
+      background-color: $burnt-sienna;
+      border: 2px solid $taupe;
+    }
+    @include tablet {
+      opacity: 0.75;
+      font-size: 1.5rem;
+      bottom: 1rem;
+      left: 2rem;
+      transform: translate(0, 0%) skew(-20deg);
     }
   }
 }
