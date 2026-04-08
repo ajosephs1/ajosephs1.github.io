@@ -1,0 +1,197 @@
+---
+// colurBlindDemo.astro
+---
+
+<div class="flex flex-col items-center gap-6 p-8 bg-zinc-900 rounded-2xl w-fit mx-auto select-none">
+
+  <!-- Label -->
+  <p class="text-zinc-400 text-sm font-inter font-bold tracking-widest uppercase">Race Light Demo</p>
+
+  <!-- Lights -->
+  <div class="flex gap-4" id="lights-container">
+    <!-- Red light 1 -->
+    <div
+      class="light light-red relative w-10 h-10 rounded-full bg-zinc-700 border border-zinc-600 flex items-center justify-center"
+      data-delay="0"
+      data-type="red"
+    >
+      <span class="symbol text-black text-xs font-bold opacity-0 pointer-events-none" aria-hidden="true">✕</span>
+    </div>
+
+    <!-- Red light 2 -->
+    <div
+      class="light light-red relative w-10 h-10 rounded-full bg-zinc-700 border border-zinc-600 flex items-center justify-center"
+      data-delay="750"
+      data-type="red"
+    >
+      <span class="symbol text-black text-xs font-bold opacity-0 pointer-events-none" aria-hidden="true">✕</span>
+    </div>
+
+    <!-- Green light -->
+    <div
+      class="light light-green relative w-10 h-10 rounded-full bg-zinc-700 border border-zinc-600 flex items-center justify-center"
+      data-delay="1500"
+      data-type="green"
+    >
+      <span class="symbol text-black text-xs font-bold opacity-0 pointer-events-none" aria-hidden="true">✓</span>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <div class="flex gap-3 items-center flex-wrap justify-center">
+    <button
+      id="replay-btn"
+      class="px-4 py-2 rounded-lg bg-zinc-700 hover:bg-zinc-600 text-white text-sm font-inter transition-colors cursor-pointer"
+    >
+      ▶ Replay
+    </button>
+
+    <button
+      id="colourblind-toggle"
+      class="px-4 py-2 rounded-lg border text-sm font-inter transition-colors cursor-pointer border-zinc-600 bg-zinc-800 text-zinc-400 hover:bg-zinc-700"
+      aria-pressed="false"
+    >
+      Colour-blind mode: <span id="toggle-label">OFF</span>
+    </button>
+  </div>
+
+</div>
+
+<style>
+  /* ── Keyframes ── */
+  @keyframes lightWrong {
+    from {
+      background-color: rgb(63 63 70); /* zinc-700 */
+      box-shadow: none;
+      border-color: rgb(82 82 91); /* zinc-600 */
+    }
+    to {
+      background-color: rgb(255, 52, 52);
+      border: 1px solid rgb(202, 151, 151);
+      box-shadow: 0 0 12px 3px rgba(251, 207, 207, 0.8);
+    }
+  }
+
+  @keyframes lightRight {
+    from {
+      background-color: rgb(63 63 70);
+      box-shadow: none;
+      border-color: rgb(82 82 91);
+    }
+    to {
+      background-color: rgb(34, 197, 94);
+      border: 1px solid rgb(134, 239, 172);
+      box-shadow: 0 0 12px 3px rgba(187, 247, 208, 0.8);
+    }
+  }
+
+  @keyframes symbolFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  /* ── Lit states ── */
+  .light-red.lit {
+    animation: lightWrong 0.75s forwards;
+  }
+
+  .light-green.lit {
+    animation: lightRight 0.75s forwards;
+  }
+
+  /* ── Symbol fade-in when colour-blind mode is active ── */
+  .light.lit.cb-active .symbol {
+    animation: symbolFadeIn 0.75s forwards;
+    /* delay is set inline via JS to match the light's own delay */
+  }
+</style>
+
+<script>
+  const lights = Array.from(document.querySelectorAll<HTMLElement>('.light'));
+  const replayBtn = document.getElementById('replay-btn')!;
+  const toggleBtn = document.getElementById('colourblind-toggle')!;
+  const toggleLabel = document.getElementById('toggle-label')!;
+
+  let colourBlindMode = false;
+  let timeouts: ReturnType<typeof setTimeout>[] = [];
+
+  function clearTimeouts() {
+    timeouts.forEach(clearTimeout);
+    timeouts = [];
+  }
+
+  function resetLights() {
+    clearTimeouts();
+    lights.forEach((light) => {
+      // Remove lit + cb-active, force reflow to restart animations
+      light.classList.remove('lit', 'cb-active');
+
+      const symbol = light.querySelector<HTMLElement>('.symbol')!;
+      symbol.style.animation = 'none';
+      symbol.style.opacity = '0';
+
+      // Void reflow
+      void light.offsetWidth;
+    });
+  }
+
+  function animateLights() {
+    resetLights();
+
+    lights.forEach((light) => {
+      const delay = parseInt(light.dataset.delay ?? '0', 10);
+
+      const t = setTimeout(() => {
+        light.classList.add('lit');
+
+        if (colourBlindMode) {
+          light.classList.add('cb-active');
+          const symbol = light.querySelector<HTMLElement>('.symbol')!;
+          // Reset then re-trigger fade-in
+          symbol.style.animation = 'none';
+          symbol.style.opacity = '0';
+          void symbol.offsetWidth;
+          symbol.style.animation = 'symbolFadeIn 0.75s forwards';
+        }
+      }, delay);
+
+      timeouts.push(t);
+    });
+  }
+
+  // Apply / remove cb-active on already-lit lights when toggle changes mid-sequence
+  function applyCbMode() {
+    lights.forEach((light) => {
+      const symbol = light.querySelector<HTMLElement>('.symbol')!;
+
+      if (colourBlindMode && light.classList.contains('lit')) {
+        light.classList.add('cb-active');
+        symbol.style.animation = 'none';
+        symbol.style.opacity = '0';
+        void symbol.offsetWidth;
+        symbol.style.animation = 'symbolFadeIn 0.75s forwards';
+      } else {
+        light.classList.remove('cb-active');
+        symbol.style.animation = 'none';
+        symbol.style.opacity = '0';
+      }
+    });
+  }
+
+  replayBtn.addEventListener('click', animateLights);
+
+  toggleBtn.addEventListener('click', () => {
+    colourBlindMode = !colourBlindMode;
+    toggleLabel.textContent = colourBlindMode ? 'ON' : 'OFF';
+    toggleBtn.setAttribute('aria-pressed', String(colourBlindMode));
+    toggleBtn.classList.toggle('border-green-500', colourBlindMode);
+    toggleBtn.classList.toggle('text-green-400', colourBlindMode);
+    toggleBtn.classList.toggle('border-zinc-600', !colourBlindMode);
+    toggleBtn.classList.toggle('text-zinc-400', !colourBlindMode);
+
+    applyCbMode();
+  });
+
+  // Auto-play on mount
+  animateLights();
+</script>
