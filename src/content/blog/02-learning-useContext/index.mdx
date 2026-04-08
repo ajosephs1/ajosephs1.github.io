@@ -1,0 +1,121 @@
+---
+title: "Adding Colour-blind mode to Cardle"
+description: "Learning how to implement useContext."
+date: "Apr 07 2026"
+---
+
+import ColourBlindDemo from "./colourblindDemo.astro" 
+
+Having a live app comes with its complaints. Some fires have more potential to steamroll than others and many are preventable with good planning. This fire was an accessibility issue. A colour-blind user was unable to discern the true or false states of the stoplight-styled results that animate onto the scoreboard after each round entry. Currently the true and false states are visually represented as a green and red light respectively. Although green and red should have enough visual separation being opposite each other on the colour wheel, my chosen colours had a contrast ratio of **2.58:1** — below the minimum WCAG AA standard for graphics of 3:1. As I've come to learn, there are different versions and severities of colour-blindness: red-green, blue-yellow, and complete colour blindness. So the cobwebbed cogs started turning and I devised a remedy for all colour-blind types. **The solution**: adding a colour-blind state for the app triggered by a toggleable colour-blind mode in the game settings. This would stylistically add an appropriate symbol to the scoreboard, result modal and the shareable grid. Before the issue surfaced I was reading React 19 documentation in my quest to better understand my library of choice, and was reading through the `useContext` documentation. In my quest to fix my crippling dependency on Claude Code I thought I'd entrust the wisdom of my React developer forebears and, for this implementation, refer to their examples of implementing context from the documentation.
+
+As the name suggests, the `useContext` hook provides context to your application with easily accessible data without the need for passing props deep into the component tree — otherwise known as prop drilling. Why isn't everything context, and what is the tradeoff? Passing props from a parent component's state is beneficial as you can see exactly where data is flowing down the tree, which is important when understanding the architecture of your app and how components depend on and interact with each other. If these qualities are not important and data needs to be shared across multiple components that may not necessarily be closely related, then consider storing this data in context. For this reason, context is often used for storing data like colour themes that would change the styling of all components, or user data for features uniquely updated per user.
+
+Context is provided through a Context Provider which must wrap the components that need to consume it. Similar to state, any changes to the data in context will trigger a re-render in any component that consumes it. This can be mitigated to an extent with the `useMemo` hook, in cases where a component is consuming a part of context that doesn't change. A final thing to note about `useContext` is that it is easy to go overboard with context provider wrappers, which can make for a messy-looking tree.
+
+```jsx
+<Auth.Provider>
+  <Theme.Provider>
+    <Language.Provider>
+      <Notification.Provider>
+        <App/>
+      </Notification.Provider>
+    </Language.Provider>
+  </Theme.Provider>
+</Auth.Provider>
+```
+
+This example of "context hell" can be mitigated by using a wrapper component to handle all context, or by placing provider wrappers closer to the components that actually use them. The example below shows refactoring to one `AppProviders` wrapper:
+
+```jsx
+function AppProviders({ children }) {
+  return (
+    <Auth.Provider>
+      <Theme.Provider>
+        <Language.Provider>
+          <Notification.Provider>
+            {children}
+          </Notification.Provider>
+        </Language.Provider>
+      </Theme.Provider>
+    </Auth.Provider>
+  )
+}
+
+// index.jsx
+<AppProviders>
+  <App/>
+</AppProviders>
+```
+
+Context that could be moved, for example, would be the `Language.Provider`, which likely only affects the text on the page. This could potentially be moved further down the tree to the components that contain text content.
+
+The implementation was generally straightforward as it used the same functionality as a light/dark mode theme provider. Thinking ahead, I also wanted to include a light/dark mode, but the priority was the accessibility mode. Here's how it would work: there would be a colour-blind toggle in the new settings modal → the button is clicked and calls a function to trigger a context update using an updater function to make use of the previous state → the change in context is saved in local storage so that this state can be retained on first load when the user revisits the app → conditionally added classes contingent on the context state are applied to the components, and their respective accessibility-focused styles are added.
+
+<ColourBlindDemo/>
+
+With a plethora of theme context examples from the React docs, I was confident this would be easily implemented, but in typical fashion this was not the case and I encountered a few roadblocks in the process. For one, my application currently runs React 18 and I was reading version 19 documentation, which has one key difference: the simplified context provider syntax. In React 19, the context object itself can be used directly as a JSX wrapper and the `.Provider` property is no longer needed:
+
+```jsx
+// React 19
+<Auth>
+  <App/>
+</Auth>
+
+// React 18
+<Auth.Provider>
+  <App/>
+</Auth.Provider>
+```
+
+Another error became apparent thanks to React Strict Mode. One of its functions is to mount, unmount, and remount components to ensure `useEffect` functions and their cleanups are working as intended. My old code had a `useEffect` to retrieve the local theme, but upon mount and unmount there was a bug with how the theme data was reinstated from local storage, causing a syncing issue between the local storage data and app state:
+
+```jsx
+const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
+
+    const [theme, setTheme] = useState({ dark: false, visibility: false })
+
+    // Gets theme from local storage on mount, but is triggered after default state is already initialized
+
+    // ***Code removed after lazy initialization***
+    useEffect(() => {
+        let localTheme = localStorage.getItem('theme')
+        if (localTheme) {
+            setTheme(JSON.parse(localTheme))
+        }
+    }, [])
+    // ***  ***
+
+    // Second useEffect also runs on mount, which means local storage values could get overwritten before they are read
+    useEffect(() => {
+        localStorage.setItem('theme', JSON.stringify(theme))
+    }, [theme])
+
+    const changeTheme = (type: string, val: boolean) => {
+        setTheme(prevTheme => ({ ...prevTheme, [type]: val }))
+    }
+
+    return (
+        <ThemeContext.Provider value={{
+            dark: theme.dark,
+            visibility: theme.visibility,
+            setTheme: changeTheme
+        }}>
+            {children}
+        </ThemeContext.Provider>
+    )
+}
+
+export default ThemeProvider
+```
+
+**The fix:** utilise lazy initialisation in React so that the state is always correct from the very first moment the component exists. I've learnt this is common practice when working with synchronous side effects like initialising state via local storage. The solution is to initialise state with a call to local storage instead of default values:
+
+```jsx
+// Anonymous function to initialise theme from local storage rather than default values
+const [theme, setTheme] = useState<ThemeState>(() => {
+    const localTheme = localStorage.getItem('theme')
+    return localTheme ? JSON.parse(localTheme) : { dark: false, visibility: false };
+})
+```
+
+Moving forward I plan on implementing light and dark mode and making use of other React hooks that may make my game logic more efficient. For example, as I read through the React documentation I'm already seeing use cases for hooks like `useReducer`, which makes it easier to update states that are derived from the previous state — for example the current score in the game. I'm also excited about using `useMemo` to avoid unnecessary re-renders, as many of my components only consume part of a stateful object when only a portion of it is changing — for example form values and their validation states. These will likely change in the future. Thanks for reading and stay tuned for those updates and more improvements to Cardle as I reinforce my knowledge of React.
